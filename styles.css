@@ -1,0 +1,400 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+    color: #1f2937;
+    background: #f8fafc;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffffff;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.nav_container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.logo img{
+    width: 120px;
+    height: auto;
+}
+
+
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 24px;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.menu a:hover {
+    background: #f3f4f6;
+}
+
+
+
+.inicio {
+    padding: 40px 20px;
+    background-color: #f8fafc;
+}
+
+
+.hero_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    text-align: center;
+}
+
+
+.hero_texto {
+    max-width: 600px;
+}
+
+.hero_titulo {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #8d4c25;
+}
+
+.hero_descripcion {
+    color: grey;
+    font-size: 16px;
+    margin: 10px 0 20px;
+}
+
+
+.hero_botones {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.boton_primario,
+.boton_secundario {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 6px;
+    border: 1px solid #8d4b25;
+    text-decoration: none;
+}
+
+.boton_primario {
+    background: #8d4b25;
+    color: #fff;
+    border-color: #111827;
+}
+
+.boton_primario:hover {
+    opacity: 0.9;
+}
+
+.boton_secundario:hover {
+    background: #f3f4f6;
+}
+
+
+.hero_image {
+    background-image: url("images/logoHero.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f3f4f6;
+    width: 100%;
+    max-width: 450px;
+    height: 350px;
+    border-radius: 10% 40% 64% 30% / 40% 77% 28% 80%;
+    overflow: hidden;
+}
+
+
+.objetivos {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.titulo_objetivos {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #8d4b25;
+}
+
+
+.objetivo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+
+.objetivo_texto {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    color: #8d4b25;
+}
+
+.numero {
+    font-size: 28px;
+    font-weight: 700;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.objetivo_texto h3 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+    color: #8d4b25;
+}
+
+.objetivo_texto p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+.objetivo img {
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+
+@media (min-width: 768px) {
+    .objetivo {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .objetivo_texto {
+        flex: 1;
+    }
+
+    .objetivo img {
+        flex: 0 0 320px;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .hero_container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 300px;
+        text-align: left;
+    }
+    .hero_texto {
+        flex: 1;
+    }
+
+    .hero_image {
+        flex: 1;
+        height: 420px;
+        background-size: cover;
+    }
+
+    .hero_botones {
+        justify-content: flex-start;
+    }
+
+
+}
+.galeria {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.titulo_galeria {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #8d4b25;
+}
+
+.galeria_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 0 auto;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.card p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #444;
+}
+
+
+.footer {
+    background-color: #8d4b25;
+    color: #f3f4f6;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer_contenido p {
+    margin: 6px 0;
+}
+
+.footer_copy {
+    margin-top: 10px;
+    font-size: 13px;
+
+}
+
+
+.contacto {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.titulo_contacto {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #8d4b25;
+    margin-bottom: 30px;
+}
+
+.formulario {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b341f;
+}
+
+.formulario input,
+.formulario textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.formulario button {
+    background-color: #8d4b25;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #a75a2d;
+}
+
+
+
+
+@media (max-width: 600px) {
+    .nav_container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu a {
+        width: 100%;
+        padding: 10px;
+    }
+}
