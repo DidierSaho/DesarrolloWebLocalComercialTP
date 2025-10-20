@@ -380,7 +380,7 @@ img {
 }
 
 
-/* ======= Tabla Promociones / Calculadora ======= */
+/*promocins */
 #listadoProductos {
     padding: 40px 20px;
     background: #fff;
@@ -415,11 +415,11 @@ img {
 }
 
 #listadoProductos tbody tr:nth-child(odd) {
-    background: #f9fafb; /* zebra suave */
+    background: #f9fafb;
 }
 
 #listadoProductos tbody tr:hover {
-    background: #fff6f0; /* leve highlight con tinte del primario */
+    background: #fff6f0;
 }
 
 #listadoProductos tfoot td {
@@ -430,8 +430,8 @@ img {
 }
 
 #totales td {
-    background: #fff2ea;         /* resalta fila total */
-    color: #4b341f;               /* tono de texto relacionado a tu paleta */
+    background: #fff2ea;
+    color: #4b341f;
 }
 
 /* Inputs dentro de la tabla */
@@ -457,13 +457,12 @@ img {
     box-shadow: 0 0 0 3px rgba(141,75,37,0.15);
 }
 
-/* Celditas “precio-desc” y “subtotal” para que no se achiquen raro */
+
 #listadoProductos .precio-desc,
 #listadoProductos .subtotal {
     min-width: 120px;
 }
 
-/* Responsive: que la tabla no “explote” en móviles */
 @media (max-width: 600px) {
     #listadoProductos table {
         font-size: 14px;
