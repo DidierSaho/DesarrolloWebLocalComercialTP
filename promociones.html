@@ -1,67 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>4patas - promociones</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <title>4patas - Promociones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class = "header">
-    <div class = "nav_container">
-        <div class = "logo">
+<header class="header">
+    <div class="nav_container">
+        <div class="logo">
             <a href="index.html">
                 <img src="images/logoComercio.png" alt="logo4patas">
             </a>
-
         </div>
         <nav>
             <ul class="menu">
-                <li><a href="index.html">Inicio</a> </li>
-                <li><a href="contacto.html">Contacto</a> </li>
-                <li><a href="galeria.html">Galeria</a> </li>
-                <li><a href="#objetivos">Objetivos</a> </li>
-                <li> <a href="promociones.html"> Promociones</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="#objetivos">Objetivos</a></li>
+                <li><a href="promociones.html" class="active">Promociones</a></li>
             </ul>
         </nav>
     </div>
 </header>
-<section id="cupon" class="contacto">
-    <h2 class="titulo_contacto">Aplicar cupon de descuento</h2>
 
-    <form class="formulario">
-        <label for="codigo">Ingrese el codigo de enlace</label>
-        <input type="text" id="codigo" name="codigo" placeholder="Ingresa el codigo">
+<section id="cupon" class="contacto">
+    <h2 class="titulo_contacto">Aplicar cupón de descuento</h2>
+    <form id="form-cupon" class="formulario">
+        <label for="codigo">Ingrese el código de cupón</label>
+        <input type="text" id="codigo" name="codigo" placeholder="Ingresa el código" />
         <button type="submit">Enviar</button>
     </form>
+    <p id="cupon-msg"></p>
 </section>
 
-<section id = "listadoProductos">
-    <table>
+<section id="promos-info" class="contacto">
+    <h3>Promociones vigentes</h3>
+    <ul>
+        <li><strong>Promo A:</strong> Llevá 2 y obtené 50% en el segundo (por producto).</li>
+        <li><strong>Promo B:</strong> 3×2 en productos seleccionados.</li>
+        <li><strong>Promo C:</strong> 10% de descuento por compras superiores a $30.000 (o cupón P4TAS10, se toma el mejor 10%).</li>
+    </ul>
+</section>
+
+<section id="listadoProductos">
+    <table id="tabla-productos">
+        <thead>
         <tr>
             <th>Producto</th>
             <th>Precio</th>
-            <th>Precio con descuento</th>
-            <th>Precio final</th>
+            <th>Precio c/ descuento (promedio)</th>
+            <th>Subtotal final</th>
             <th>Seleccionar</th>
-            <th> Cantidades</th>
+            <th>Cantidad</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Cada fila declara precio y promo en data-* para mantener el HTML simple -->
+        <tr data-precio="3000" data-promo="50SEGUNDO">
+            <td>Collar</td>
+            <td class="precio-unit">3.000</td>
+            <td class="precio-desc">-</td>
+            <td class="subtotal">-</td>
+            <td><input type="checkbox" class="chk" /></td>
+            <td><input type="number" class="qty" min="1" value="1" /></td>
+        </tr>
+
+        <tr data-precio="12000" data-promo="3X2">
+            <td>Arnés Premium</td>
+            <td class="precio-unit">12.000</td>
+            <td class="precio-desc">-</td>
+            <td class="subtotal">-</td>
+            <td><input type="checkbox" class="chk" /></td>
+            <td><input type="number" class="qty" min="1" value="1" /></td>
+        </tr>
+
+        <tr data-precio="8500" data-promo="NINGUNA">
+            <td>Juguete Mordedor</td>
+            <td class="precio-unit">8.500</td>
+            <td class="precio-desc">-</td>
+            <td class="subtotal">-</td>
+            <td><input type="checkbox" class="chk" /></td>
+            <td><input type="number" class="qty" min="1" value="1" /></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3" style="text-align:right"><strong>Total sin descuento:</strong></td>
+            <td id="total-sin-desc">-</td>
+            <td colspan="2"></td>
         </tr>
         <tr>
-            <td>Collar</td>
-            <td>300</td>
-            <td id = "preciosSinDescuento">300</td>
-            <td id = "precioFinal">120 </td>
-            <td> <input type="checkbox"></td>
-            <td> <input type="number"></td>
+            <td colspan="3" style="text-align:right"><strong>Descuentos (promos + cupón/umbral):</strong></td>
+            <td id="total-descuento">-</td>
+            <td colspan="2"></td>
         </tr>
-        <tr id="totales"> Total es
-            <td id =campoTotales> </td>
+        <tr id="totales">
+            <td colspan="3" style="text-align:right"><strong>Total a pagar:</strong></td>
+            <td id="total-final">-</td>
+            <td colspan="2"></td>
         </tr>
+        </tfoot>
     </table>
-
 </section>
 
-
-
+<script src="promociones.js"></script>
 </body>
 </html>

@@ -380,6 +380,103 @@ img {
 }
 
 
+/* ======= Tabla Promociones / Calculadora ======= */
+#listadoProductos {
+    padding: 40px 20px;
+    background: #fff;
+}
+
+#listadoProductos table {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden; /* respeta el radius */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+#listadoProductos thead th {
+    background: #8d4b25;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    padding: 12px 10px;
+    border-bottom: 2px solid #7b411f;
+}
+
+#listadoProductos tbody td {
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+    color: #1f2937;
+}
+
+#listadoProductos tbody tr:nth-child(odd) {
+    background: #f9fafb; /* zebra suave */
+}
+
+#listadoProductos tbody tr:hover {
+    background: #fff6f0; /* leve highlight con tinte del primario */
+}
+
+#listadoProductos tfoot td {
+    padding: 12px 10px;
+    text-align: center;
+    border-top: 2px solid #e5e7eb;
+    font-weight: 700;
+}
+
+#totales td {
+    background: #fff2ea;         /* resalta fila total */
+    color: #4b341f;               /* tono de texto relacionado a tu paleta */
+}
+
+/* Inputs dentro de la tabla */
+#listadoProductos input[type="checkbox"],
+#listadoProductos input[type="number"] {
+    cursor: pointer;
+}
+
+#listadoProductos input[type="number"] {
+    width: 80px;
+    max-width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    background: #ffffff;
+}
+
+#listadoProductos input[type="number"]:focus {
+    outline: none;
+    border-color: #8d4b25;
+    box-shadow: 0 0 0 3px rgba(141,75,37,0.15);
+}
+
+/* Celditas “precio-desc” y “subtotal” para que no se achiquen raro */
+#listadoProductos .precio-desc,
+#listadoProductos .subtotal {
+    min-width: 120px;
+}
+
+/* Responsive: que la tabla no “explote” en móviles */
+@media (max-width: 600px) {
+    #listadoProductos table {
+        font-size: 14px;
+    }
+    #listadoProductos thead th,
+    #listadoProductos tbody td,
+    #listadoProductos tfoot td {
+        padding: 10px 8px;
+    }
+    #listadoProductos input[type="number"] {
+        width: 64px;
+    }
+}
 
 
 @media (max-width: 600px) {
